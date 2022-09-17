@@ -1,0 +1,14 @@
+name: Test
+on: pull_request
+permissions:
+  checks: write
+  contents: write
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/checkout@v3
+    - run: sudo apt-get install -y clang-format
+    - uses: manicmaniac/lint-action@clang-format
+      with:
+        clang-format: true
