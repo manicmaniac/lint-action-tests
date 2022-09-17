@@ -11,4 +11,6 @@ jobs:
     - run: sudo apt-get install -y clang-format
     - uses: manicmaniac/lint-action@clang-format
       with:
+        auto_fix: true
         clang_format: true
+        clang_format_auto_fix: true
